@@ -1,0 +1,10 @@
+from langchain_core.messages import HumanMessage
+langchain_core
+# high level frameworks allows us to build AI application
+
+langgrapgh
+#complex frameworks that allow us to build AI Agent
+
+
+langchain_openai
+# allow us to use open AI within langchain and langgraphh
