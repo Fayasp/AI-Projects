@@ -52,7 +52,8 @@ def main():
             {file_content}
             
             Please provide your analysis in a clear, structured format with specific recommendations."""
-        
+            
+            client = openai.OpenAI(api_key=OPEN_API_KEY)
             response = client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[

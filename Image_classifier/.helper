@@ -1,0 +1,58 @@
+<!-- TenserflowTensorFlow is an open-source machine learning and deep learning framework created by Google.
+
+It helps developers build, train, and deploy artificial intelligence (AI) models — such as image classifiers, chatbots, and predictive systems — with ease.
+
+
+
+OpenCV stands for Open Source Computer Vision Library.
+It’s a free, open-source library used for image processing, computer vision, and machine learning tasks.
+so we can pass to tenserflow -->
+
+
+
+import cv2
+
+import numpy as np
+import streamlit as st
+from tensorflow.keras.appllication.mobilenet_v2 import (
+
+    MobileNetV2,
+    preprocess_input,
+    decode_predictions
+)
+
+from PIL import Image
+
+
+def load_model():
+    model = MobileNetV2(weights='imagenet')
+    return model
+
+def preprocess_image(image):
+    image = np.array(image)                 #Convert image to a NumPy array
+    image = cv.resize(image, (224, 224))    #Uses OpenCV (cv) to resize the image to 224×224 pixels. This is the input size expected by MobileNetV2 and many other CNN models.
+    image = preprocess_input(image)         #Preprocess pixel values
+    image = np.expand_dims(image, axis=0)   #Adds a new dimension at the start of the array.
+
+    return image
+
+
+def classify_image(model, image):
+    try:
+        processed_image    = preprocess_image(image)           #Converts the raw image into a format suitable for the MobileNetV2 model.
+        predictions        = model.predict(preprocess_image)   #The model makes predictions and outputs probabilities for 1000 classes.
+        decoded_predictiona = decode_predictions(predictions, top = 3)[0] #Converts those probabilities into readable class labels (like “golden retriever” or “traffic light”).
+        return decode_predictions
+
+    except Exception as e:
+        st.error(f"Error during classification :{str(e)}")
+        return None
+
+MobileNetV2
+
+This is a pre-trained neural network provided by TensorFlow / Keras.
+
+All the model weights are already included (or downloaded from Keras when you first run it).
+
+Everything runs locally on your machine, so no internet or API key is needed.
+ 
