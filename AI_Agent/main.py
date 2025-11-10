@@ -10,7 +10,7 @@ import os
 
 @tool
 def calculator(a:float, b:float,operation: str) -> str:
-        """ Useful for performing basic arithmetic operations. """
+        """ Useful for performing  arithmetic operations. """
         operation = operation.lower()
 
         
