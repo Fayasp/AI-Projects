@@ -1,0 +1,39 @@
+from langchain_core.messages import HumanMessage
+langchain_core
+# high level frameworks allows us to build AI application
+Framework to integrate LLMs, agents, and tools
+
+langgrapgh
+#complex frameworks that allow us to build AI Agent
+Provides prebuilt ReAct agent architecture
+
+langchain_openai
+# allow us to use open AI within langchain and langgraphh
+
+
+
+#project ai agent
+How it Works (Workflow)
+
+User Input:
+The user types a query, e.g., "Multiply 4 and 6".
+
+ReAct Agent:
+
+Receives the input and analyzes it.
+
+Determines whether the input is simple conversation or requires a tool.
+
+Tool Execution (if needed):
+
+Calls the appropriate Python function (calculator or say_hello).
+
+Function returns a result (e.g., "4 * 6 = 24").
+
+Response Streaming:
+
+The agent streams the response back to the console in real time.
+
+Repeat:
+
+Continues until the user types "quit".
